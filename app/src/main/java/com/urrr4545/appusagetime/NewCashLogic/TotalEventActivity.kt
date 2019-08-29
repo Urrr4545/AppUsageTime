@@ -41,7 +41,7 @@ class TotalEventActivity : AppCompatActivity() {
                 val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
                 startActivity(intent)
             }
-        }
+        }//
 
         reversBtn.setOnClickListener {
             reverseItem()
