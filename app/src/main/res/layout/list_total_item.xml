@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+            android:id="@+id/usageAppStartTime"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"/>
+
+
+    <ImageView
+            android:id="@+id/usageAppIcon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/usageAppStartTime"/>
+
+    <TextView
+            android:id="@+id/usageAppUseTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/usageAppIcon"/>
+
+    <TextView
+            android:id="@+id/usageAppName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/usageAppUseTime"
+            android:layout_toEndOf="@+id/usageAppIcon"/>
+
+</RelativeLayout>

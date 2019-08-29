@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp">
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dataload_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로드"/>
+
+        <Button
+                android:id="@+id/permission_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="권한확인"/>
+
+            <TextView
+                    android:id="@+id/permission_Status"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+        <Button
+                android:id="@+id/prev_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이전"/>
+
+        <TextView
+                android:id="@+id/current_day"
+                android:layout_width="120dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/next_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다음"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘 총 사용시간 : "/>
+
+        <TextView
+                android:id="@+id/totalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+    </LinearLayout>
+
+
+    <TextView
+            android:id="@+id/reversBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="순서전환"/>
+
+    <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/event_type"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="타입"/>
+
+        <TextView
+                android:id="@+id/event_timestamp"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_toRightOf="@+id/event_type"
+                android:text="시간"/>
+
+        <TextView
+                android:id="@+id/event_package"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_toRightOf="@+id/event_timestamp"
+                android:layout_toLeftOf="@+id/event_class"
+                android:text="패키지"/>
+
+        <TextView
+                android:id="@+id/event_class"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="클래스"/>
+    </RelativeLayout>-->
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
