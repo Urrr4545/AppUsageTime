@@ -80,6 +80,16 @@ class TotalEventActivity : AppCompatActivity() {
         current_day.text = format1.format(calendar!!.timeInMillis)
     }
 
+    override fun onResume() {
+        super.onResume()
+        if(checkPermission()) {
+            loadData()
+        }
+    }
+
+    /**
+     * 지정한 날짜(일)에대한 데이터를 가져온 후 해당로직을 통하여 앱별시간데이터를 만든다.
+     */
     fun loadData(){
         totalEventItems = CashPaymentUtils.getTotalTodayDate(this,calendar!!)
         recycler_all?.let{
@@ -210,10 +220,12 @@ class TotalEventActivity : AppCompatActivity() {
             var min = (usageAppStateObj.appUseTime % (60 * 60)) / 60
             var sec = usageAppStateObj.appUseTime % 60
             var time = String.format("%02d:%02d:%02d", hour,min,sec)
-            Log.e("dst data"," 시작시간 : "+format1.format(usageAppStateObj.appStartTime) + " 앱이름 : "+usageAppStateObj.appName +  " 사용시간 : " +time)
+            Log.e("dst data","시작시간 : "+format1.format(usageAppStateObj.appStartTime) +  "         사용시간 : " +time + "         앱이름 : "+usageAppStateObj.appName )
         }
 
-        var totalUseTime = usageAppList.filter{it.appUseTime>0 && !it.appPackageName.equals("com.sec.android.app.launcher")}.sumBy { it.appUseTime }
+        //잠금화면 앱만빼고.
+//        var totalUseTime = usageAppList.filter{it.appUseTime>0 && !it.appPackageName.equals("com.sec.android.app.launcher")}.sumBy { it.appUseTime }
+        var totalUseTime = usageAppList.filter{it.appUseTime>0}.sumBy { it.appUseTime }
 
         var hour = totalUseTime /(60 * 60)
         var min = (totalUseTime % (60 * 60)) / 60
